@@ -56,7 +56,7 @@ _Navigator layer: `layers/attack-layer.json` · screenshot: `images/attack-navig
 
 - No full public forensic report from Viasat.
 - TODO
-
+- **SPARTA coverage gap:** IA-0007 (Compromise Ground System) describes ground-segment compromise as a path to the spacecraft. In KA-SAT the initial access matches (VPN → management network), but the satellite itself was never touched; the target was the user terminals. The mapping is therefore by analogy, which is why this analysis also uses MITRE ATT&CK.
 ## 8. Sources
 
 - [Viasat: KA-SAT Network cyber attack overview](https://www.viasat.com/perspectives/corporate/2022/ka-sat-network-cyber-attack-overview/)
