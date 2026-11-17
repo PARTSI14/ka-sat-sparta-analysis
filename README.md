@@ -60,6 +60,9 @@ _Navigator layer: `layers/attack-layer.json` · screenshot: `images/attack-navig
 - **SPARTA Lateral Movement scope:** SPARTA defines this tactic as movement within a spacecraft or between nodes in a constellation (ST0007). Movement inside a ground network is out of scope, so LM-0007 is applied by analogy and ATT&CK T1021 covers the actual behaviour.
 - **DE-0004 Masquerading considered and rejected:** the technique describes forging or imitating an authorized origin. In KA-SAT the commands came from the real (compromised) management system, so only the effect matches, not the method. IA-0007.02 covers this case better.
 - **Reverse trust direction:** SPARTA IA-0009.03 describes a compromised user terminal as a springboard *into* the provider and spacecraft. KA-SAT shows the opposite path: a compromised provider management plane used *against* thousands of user terminals that trusted it. This provider-to-customer direction is not explicitly modelled in SPARTA.
+- **Dwell time unknown:** Viasat has not disclosed when the attacker first gained access. A pre-positioned foothold, held until 24 Feb, is plausible but unconfirmed.
+- **Why destroy instead of persist? (assessment):** the timing suggests the objective was disruption of communications at the start of the invasion, not intelligence collection. A wiper makes the outage last (modems had to be replaced or reflashed) and destroys forensic evidence, at the cost of "burning" the access.
+  
 ## 8. Sources
 
 - [Viasat: KA-SAT Network cyber attack overview](https://www.viasat.com/perspectives/corporate/2022/ka-sat-network-cyber-attack-overview/)
