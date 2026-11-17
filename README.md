@@ -22,7 +22,7 @@ _TODO (5 lines): what happened, who was affected, how, key lesson._
 | 1 | Initial access via VPN | IA-0007 Compromise Ground System | |
 | 2 | Lateral movement | PER-0003 Ground System Presence; LM-0007 Credentialed Traversal (by analogy) | Viasat: lateral movement within the trusted management segment |
 | 3 | Legitimate-looking commands | IA-0007.02 Malicious Commanding via Valid GS (by analogy) | Viasat: legitimate, targeted management commands sent to many modems simultaneously |
-| 4 | User terminals targeted | TODO | |
+| 4 | User terminals targeted | IA-0009.03 Trusted Relationship: User Segment (partial — reverse direction) | Modems trusted the provider's management plane and executed its commands |
 | 5 | AcidRain wiper | TODO (Impact) | |
 | 6 | DoS from modems | TODO (Impact) | |
 
@@ -58,7 +58,8 @@ _Navigator layer: `layers/attack-layer.json` · screenshot: `images/attack-navig
 - TODO
 - **SPARTA coverage gap:** IA-0007 (Compromise Ground System) describes ground-segment compromise as a path to the spacecraft. In KA-SAT the initial access matches (VPN → management network), but the satellite itself was never touched; the target was the user terminals. The mapping is therefore by analogy, which is why this analysis also uses MITRE ATT&CK.
 - **SPARTA Lateral Movement scope:** SPARTA defines this tactic as movement within a spacecraft or between nodes in a constellation (ST0007). Movement inside a ground network is out of scope, so LM-0007 is applied by analogy and ATT&CK T1021 covers the actual behaviour.
-- **DE-0004 Masquerading considered and rejected:** the technique describes forging or imitating an authorized origin. In KA-SAT the commands came from the real (compromised) management system, so only the effect matches, not the method. IA-0007.02 covers this case better. 
+- **DE-0004 Masquerading considered and rejected:** the technique describes forging or imitating an authorized origin. In KA-SAT the commands came from the real (compromised) management system, so only the effect matches, not the method. IA-0007.02 covers this case better.
+- **Reverse trust direction:** SPARTA IA-0009.03 describes a compromised user terminal as a springboard *into* the provider and spacecraft. KA-SAT shows the opposite path: a compromised provider management plane used *against* thousands of user terminals that trusted it. This provider-to-customer direction is not explicitly modelled in SPARTA.
 ## 8. Sources
 
 - [Viasat: KA-SAT Network cyber attack overview](https://www.viasat.com/perspectives/corporate/2022/ka-sat-network-cyber-attack-overview/)
