@@ -23,7 +23,7 @@ _TODO (5 lines): what happened, who was affected, how, key lesson._
 | 2 | Lateral movement | PER-0003 Ground System Presence; LM-0007 Credentialed Traversal (by analogy) | Viasat: lateral movement within the trusted management segment |
 | 3 | Legitimate-looking commands | IA-0007.02 Malicious Commanding via Valid GS (by analogy) | Viasat: legitimate, targeted management commands sent to many modems simultaneously |
 | 4 | User terminals targeted | IA-0009.03 Trusted Relationship: User Segment (partial — reverse direction) | Modems trusted the provider's management plane and executed its commands |
-| 5 | AcidRain wiper | TODO (Impact) | |
+| 5 | AcidRain wiper | IMP-0012 Software, Firmware, or Programmable Logic Manipulation — objective: Disable (by analogy) | SentinelLabs: AcidRain overwrote key data in modem flash memory, rendering devices inoperable |
 | 6 | DoS from modems | TODO (Impact) | |
 
 _Navigator layer: `layers/sparta-layer.json` · screenshot: `images/sparta-navigator.png`_
