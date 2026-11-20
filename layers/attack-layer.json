@@ -113,8 +113,7 @@
       "label": "Direct match",
       "color": "#e60d0d"
     },
-    {
-      "label": "By analogy (framework written for a different segment)",
+    {"label": "By analogy",
       "color": "#fc9f3a"
     },
     {
