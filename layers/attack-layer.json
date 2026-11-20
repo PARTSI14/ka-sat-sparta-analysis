@@ -1,0 +1,135 @@
+{
+  "name": "KA-SAT 2022 (Viasat) - ATT&CK",
+  "versions": {
+    "attack": "20",
+    "navigator": "5.0.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "KA-SAT / AcidRain attack of 24 Feb 2022 mapped to MITRE ATT&CK Enterprise v20. Score = attack phase (1-6). Sources: Viasat incident overview (30 Mar 2022), SentinelLabs AcidRain analysis.",
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "showName": true,
+    "showID": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1133",
+      "tactic": "initial-access",
+      "color": "#e60d0d",
+      "score": 1,
+      "comment": "Phase 1: Misconfigured VPN appliance gave remote access to the trusted management segment (Viasat).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1021",
+      "tactic": "lateral-movement",
+      "color": "#e60d0d",
+      "score": 2,
+      "comment": "Phase 2: Lateral movement through the management network to the segment used to operate the network. Specific remote service not disclosed.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1072",
+      "tactic": "execution",
+      "color": "#e60d0d",
+      "score": 3,
+      "comment": "Phase 3: Legitimate, targeted management commands executed on many modems simultaneously; used to run the AcidRain binary (Viasat, SentinelLabs).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1199",
+      "tactic": "initial-access",
+      "color": "#fce93a",
+      "score": 4,
+      "comment": "Phase 4: Modems trusted the provider management plane. Provider-to-customer direction; ATT&CK models customer-side abuse of a third party.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1485",
+      "tactic": "impact",
+      "color": "#e60d0d",
+      "score": 5,
+      "comment": "Phase 5: AcidRain (as root) recursively overwrites and deletes non-standard files.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1561",
+      "tactic": "impact",
+      "color": "#e60d0d",
+      "score": 5,
+      "comment": "Phase 5: AcidRain overwrites /dev/sd*, /dev/mtdblock*, /dev/mmcblk*, /dev/loop* etc. (up to 0x40000 bytes).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1495",
+      "tactic": "impact",
+      "color": "#e60d0d",
+      "score": 5,
+      "comment": "Phase 5: Erases /dev/mtd* flash via MEMGETINFO/MEMUNLOCK/MEMERASE/MEMWRITEOOB IOCTLs. Modems recoverable by factory reset (Viasat).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1529",
+      "tactic": "impact",
+      "color": "#e60d0d",
+      "score": 5,
+      "comment": "Phase 5: Redundant reboot attempts after wiping leave the device inoperable.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1498",
+      "tactic": "impact",
+      "color": "#e60d0d",
+      "score": 6,
+      "comment": "Phase 6: High volumes of malicious traffic from SurfBeam2/2+ modems in Ukraine from ~03:02 UTC (Viasat).",
+      "enabled": true,
+      "showSubtechniques": true
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#e60d0d"
+    ],
+    "minValue": 0,
+    "maxValue": 6
+  },
+  "legendItems": [
+    {
+      "label": "Direct match",
+      "color": "#e60d0d"
+    },
+    {
+      "label": "By analogy (framework written for a different segment)",
+      "color": "#fc9f3a"
+    },
+    {
+      "label": "Partial match",
+      "color": "#fce93a"
+    }
+  ],
+  "metadata": [
+    {
+      "name": "Incident",
+      "value": "KA-SAT (Viasat), 24 Feb 2022"
+    },
+    {
+      "name": "Malware",
+      "value": "AcidRain (ukrop) SHA256 9b4dfaca873961174ba935fddaf696145afe7bbf5734509f95feb54f3584fd9a"
+    }
+  ]
+}
