@@ -42,7 +42,7 @@ Viasat found no evidence that the satellite or its ground infrastructure was com
 
 _Verified against SPARTA v4.0.1 (IA-0007, IA-0007.02, ST0009 Impact, LM-0007 pages). In v4.0 the Impact tactic uses **mechanism techniques** (IMP-0007 to IMP-0014) plus **Impact Vectors** (Collect, Pivot, Subvert, Seize, Disable); IMP-0001 to IMP-0006 are deprecated. SPARTA allows one action to map to more than one Impact technique._
 
-_Navigator layer: [`layers/sparta-layer.json`](layers/sparta-layer.json) (open it in the [SPARTA Navigator](https://sparta.aerospace.org/navigator)) · screenshot: TODO_
+_Navigator layer: [`layers/sparta-layer.json`](layers/sparta-layer.json) (open it in the [SPARTA Navigator](https://sparta.aerospace.org/navigator))_
 
 ## 4. MITRE ATT&CK mapping
 
