@@ -129,3 +129,9 @@ _Note: code signing of firmware updates (CM0021) would not have stopped this att
 - [SPARTA](https://sparta.aerospace.org) (v4.0.1) · [SPARTA Countermeasures](https://sparta.aerospace.org/countermeasures/SPARTA) · [Ground Segment Cyber Defenses](https://sparta.aerospace.org/countermeasures/ground-segment-cyber-defenses) · [Impact tactic ST0009](https://sparta.aerospace.org/tactic/ST0009)
 - [The Aerospace Corporation: SPARTA v4.0 — Breaking New Ground](https://medium.com/the-aerospace-corporation/sparta-v4-0-breaking-new-ground-b2d3b7ab832f)
 - [MITRE ATT&CK](https://attack.mitre.org)
+
+## License & attribution
+
+© 2026 PARTSINEVELOS STYLIANOS. This analysis is released under the MIT License (see [LICENSE](LICENSE)).
+
+MITRE ATT&CK® is a registered trademark of The MITRE Corporation; ATT&CK content © The MITRE Corporation. SPARTA © The Aerospace Corporation. Both frameworks are referenced for analysis only; this project is not affiliated with or endorsed by either organization. All incident facts come from the public sources listed in section 8.
