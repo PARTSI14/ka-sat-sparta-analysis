@@ -2,7 +2,7 @@
 
 > Portfolio project analysing a real-world space-sector cyber incident with the SPARTA and MITRE ATT&CK frameworks.
 >
-> **Framework versions:** SPARTA v4.0.1 (24 Aug 2026) · MITRE ATT&CK Enterprise (TODO: version)
+> **Framework versions:** SPARTA v4.0.1 (24 Aug 2026) · MITRE ATT&CK Enterprise v20
 
 ## 1. Executive summary
 
@@ -42,7 +42,7 @@ Viasat found no evidence that the satellite or its ground infrastructure was com
 
 _Verified against SPARTA v4.0.1 (IA-0007, IA-0007.02, ST0009 Impact, LM-0007 pages). In v4.0 the Impact tactic uses **mechanism techniques** (IMP-0007 to IMP-0014) plus **Impact Vectors** (Collect, Pivot, Subvert, Seize, Disable); IMP-0001 to IMP-0006 are deprecated. SPARTA allows one action to map to more than one Impact technique._
 
-_Navigator layer: `layers/sparta-layer.json` · screenshot: `images/sparta-navigator.png`_
+_Navigator layer: [`layers/sparta-layer.json`](layers/sparta-layer.json) (open it in the [SPARTA Navigator](https://sparta.aerospace.org/navigator)) · screenshot: TODO_
 
 ## 4. MITRE ATT&CK mapping
 
@@ -53,6 +53,7 @@ _Navigator layer: `layers/sparta-layer.json` · screenshot: `images/sparta-navig
 | 3 | Mass management commands | T1072 Software Deployment Tools |
 | 4 | User terminals targeted | T1199 Trusted Relationship (provider → customer devices) |
 | 5 | AcidRain wiper | T1485 Data Destruction, T1561 Disk Wipe, T1495 Firmware Corruption, T1529 System Shutdown/Reboot |
+| 6 | DoS from modems | T1498 Network Denial of Service |
 
 ### AcidRain at a glance (SentinelLabs)
 
@@ -65,9 +66,10 @@ _Navigator layer: `layers/sparta-layer.json` · screenshot: `images/sparta-navig
 | Step 3 | Redundant reboot attempts → device inoperable → T1529 |
 | Design | Generic "one-binary-fits-all" wiper, not tailored to the SurfBeam2 firmware |
 | Overlap | ~55% tlsh similarity and shared MEM* IOCTL logic with VPNFilter stage 3 `dstr` plugin (medium confidence) |
-| 6 | DoS from modems | T1498 Network Denial of Service |
 
-_Navigator layer: `layers/attack-layer.json` · screenshot: `images/attack-navigator.png`_
+![ATT&CK Navigator layer for KA-SAT](images/attack-navigator.svg)
+
+_Navigator layer: [`layers/attack-layer.json`](layers/attack-layer.json) (open it in the [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/))_
 
 ## 5. Detection opportunities (SOC view)
 
@@ -91,9 +93,9 @@ NIST and ISO columns show the most relevant controls selected by the analyst, no
 | 3. Mass management commands | CM0054 Two-Person Rule; CM0055 Secure Command Mode(s); CM0052 Insider Threat Protection (all three mapped by SPARTA to IA-0007.02) | AC-3(2), AC-6(9), AU-6 | A.5.3, A.8.15, A.8.16 |
 | 4. User terminals targeted | CM0055 Secure Command Mode(s) (by analogy: SPARTA defines it for onboard spacecraft command acceptance; applied here to terminal-side authorisation of high-risk commands); CM0039 Least Privilege | AC-3, AC-6, SI-10 | A.8.2, A.8.18 |
 | 5. AcidRain wiper | CM0014 Secure Boot; CM0056 Data Backup (golden image / recovery partition); CM0090 Continuous Monitoring | SI-7, CP-9, CP-10, CA-7 | A.8.13, A.8.16, A.5.30 |
+| 6. DoS from modems | CM-NA (no SPARTA CM addresses DoS directly); CM0070 Alternate Communications Paths (resilience) | SC-5, SI-4, CP-8 | A.8.20, A.8.16, A.5.30 |
 
 _Note: code signing of firmware updates (CM0021) would not have stopped this attack. Viasat found no tampering with firmware images and no use of the normal update process; the damage came from legitimate management commands._
-| 6. DoS from modems | CM-NA (no SPARTA CM addresses DoS directly); CM0070 Alternate Communications Paths (resilience) | SC-5, SI-4, CP-8 | A.8.20, A.8.16, A.5.30 |
 
 ## 7. Open questions & limitations
 
