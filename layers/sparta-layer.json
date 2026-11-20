@@ -1,0 +1,124 @@
+{
+  "name": "KA-SAT 2022 (Viasat) - SPARTA",
+  "versions": {
+    "sparta": "4.0.1",
+    "layer": "4.5"
+  },
+  "domain": "sparta",
+  "description": "KA-SAT / AcidRain attack of 24 Feb 2022 mapped to SPARTA v4.0.1. Score = attack phase (1-6). Most mappings are by analogy: the satellite was not touched; the targets were user terminals.",
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "showName": true,
+    "showID": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "IA-0007",
+      "tactic": "initial-access",
+      "color": "#e60d0d",
+      "score": 1,
+      "comment": "Phase 1: Compromise Ground System: VPN misconfiguration -> trusted management segment.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "PER-0003",
+      "tactic": "persistence",
+      "color": "#e60d0d",
+      "score": 2,
+      "comment": "Phase 2: Ground System Presence: attacker held a foothold in the management network (dwell time unknown).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "LM-0007",
+      "tactic": "lateral-movement",
+      "color": "#fc9f3a",
+      "score": 2,
+      "comment": "Phase 2: Credentialed Traversal (by analogy): LM-0007 targets onboard/constellation traversal; credential use not confirmed by Viasat.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "IA-0007.02",
+      "tactic": "initial-access",
+      "color": "#fc9f3a",
+      "score": 3,
+      "comment": "Phase 3: Malicious Commanding via Valid GS (by analogy): command origin appeared valid; misuse of legitimate command authority.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "IMP-0007",
+      "tactic": "impact",
+      "color": "#fc9f3a",
+      "score": 3,
+      "comment": "Phase 3: Native Functionality Abuse - vector: Disable (by analogy): legitimate management function used to run the wiper.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "IA-0009.03",
+      "tactic": "initial-access",
+      "color": "#fce93a",
+      "score": 4,
+      "comment": "Phase 4: Trusted Relationship: User Segment (partial, reverse direction): provider management plane used against trusting terminals.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "IMP-0012",
+      "tactic": "impact",
+      "color": "#fc9f3a",
+      "score": 5,
+      "comment": "Phase 5: Software, Firmware, or Programmable Logic Manipulation - vector: Disable (by analogy): AcidRain wipes flash/storage.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "IMP-0010",
+      "tactic": "impact",
+      "color": "#fc9f3a",
+      "score": 5,
+      "comment": "Phase 5: Data Manipulation - vector: Disable (by analogy): file overwrite/delete step.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "IMP-0013",
+      "tactic": "impact",
+      "color": "#fc9f3a",
+      "score": 6,
+      "comment": "Phase 6: Resource Exhaustion or Contention - vector: Subvert (by analogy): modem DoS degraded network access for legitimate modems.",
+      "enabled": true,
+      "showSubtechniques": true
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#e60d0d"
+    ],
+    "minValue": 0,
+    "maxValue": 6
+  },
+  "legendItems": [
+    {
+      "label": "Direct match",
+      "color": "#e60d0d"
+    },
+    {
+      "label": "By analogy (framework written for a different segment)",
+      "color": "#fc9f3a"
+    },
+    {
+      "label": "Partial match",
+      "color": "#fce93a"
+    }
+  ]
+}
