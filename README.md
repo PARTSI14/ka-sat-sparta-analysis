@@ -67,7 +67,7 @@ _Navigator layer: [`layers/sparta-layer.json`](layers/sparta-layer.json) (open i
 | Design | Generic "one-binary-fits-all" wiper, not tailored to the SurfBeam2 firmware |
 | Overlap | ~55% tlsh similarity and shared MEM* IOCTL logic with VPNFilter stage 3 `dstr` plugin (medium confidence) |
 
-![ATT&CK Navigator layer for KA-SAT](images/attack-navigator.svg)
+![ATT&CK Navigator layer for KA-SAT](attack-navigator.svg)
 
 _Navigator layer: [`layers/attack-layer.json`](layers/attack-layer.json) (open it in the [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/))_
 
